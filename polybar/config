@@ -17,16 +17,19 @@
 ;==========================================================
 
 [colors]
-; Actual bar color
+; Colors for 1.Actual bar 
+;            2.Workspace overlay color 
+;            3.Underline color
 background = #1d2e55
-; Workspace overlay color
 background-alt = #2f3f6f
+line-color = #0000
 
-; Color of text
+; Color of 1. text
+;          2. text-2
 foreground = #ccc
-; Color of text-2
 foreground-alt = #999
-; 
+
+; Color designations 
 primary = #fff
 secondary = #fff
 alert = #fff
@@ -67,9 +70,9 @@ module-margin-left = 1
 ; How close modules are to each other on the right
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = "Overpass:size=10;2"
+font-1 = "IcoFont:size=12;0"
+; font-2 = "Inconsolata:size=12;0"
 
 modules-left = bspwm
 modules-center = date
@@ -99,7 +102,7 @@ blacklist-0 = num lock
 
 format-prefix = "K "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
+format-prefix-underline = ${colors.line-color}
 
 label-layout = %layout%
 label-layout-underline = ${colors.secondary}
@@ -107,7 +110,7 @@ label-layout-underline = ${colors.secondary}
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
+label-indicator-underline = ${colors.line-color}
 
 ;[module/filesystem]
 ;type = internal/fs
@@ -124,7 +127,7 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-underline= ${colors.line-color}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -145,11 +148,11 @@ label-empty-padding = 2
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
 
 label-song-maxlen = 25
 label-song-ellipsis = true
@@ -179,9 +182,9 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 1
-format-prefix = "C "
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+; format-underline = ${colors.line-color}
 label = %percentage:2%%
 
 [module/memory]
@@ -189,7 +192,7 @@ type = internal/memory
 interval = 2
 format-prefix = "M "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = #fff
 label = %percentage_used%%
 
 [module/wlan]
@@ -207,11 +210,11 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = "X"
+ramp-signal-1 = "X"
+ramp-signal-2 = "X"
+ramp-signal-3 = "X"
+ramp-signal-4 = "X"
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
@@ -220,7 +223,7 @@ interface =
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = "I "
+format-connected-prefix = 
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -230,28 +233,29 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
+; ======================================================================
+
 [module/date]
 type = internal/date
-; How often module updates
-interval = 15
-
-; Formatting for date field
-date = " %d-%m-%Y"
-;date-alt = " %Y-%m-%d"
-
-; Formatting for time field
-time = %H:%M
-;time-alt = %H:%M:%S
-
-; Symbol/text before module
-;format-prefix = 
-; Color for module text before module
-;format-prefix-foreground = ${colors.foreground-alt}
-; Underline color for module
-format-underline = #fff
 
 ; Module layout (mind the double space)
-label = %time%  | %date%
+label = %time% %date%
+
+; How often module updates
+interval = 1
+
+; Formatting for time and date
+time = %H:%M
+date = " %d-%m-%Y"
+
+; Symbol/text before module
+; format-prefix = 
+; Color for module text before module
+; format-prefix-foreground = ${colors.foreground-alt}
+; Underline color for module
+; format-underline = #000
+
+; ======================================================================
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -260,7 +264,7 @@ format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+label-muted = "X"
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -287,7 +291,7 @@ format-volume = <label-volume> <bar-volume>
 label-volume = VOL
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+format-muted-prefix = "X"
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
@@ -320,27 +324,28 @@ format-charging-underline = #ffb52a
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = "X "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = "X"
+ramp-capacity-1 = "X"
+ramp-capacity-2 = "X"
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = "X"
+animation-charging-1 = "X"
+animation-charging-2 = "X"
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 = "X"
+animation-discharging-1 = "X"
+animation-discharging-2 = "X"
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
+; 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
@@ -355,39 +360,31 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = "T"
+ramp-1 = "T"
+ramp-2 = "T"
 ramp-foreground = ${colors.foreground-alt}
+
+; ======================================================================
 
 [module/powermenu]
 type = custom/menu
 
-expand-right = true
+expand-right = false
 
-format-spacing = 1
+label-open = 
+label-close = 
 
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+; label-open-foreground = ${colors.secondary}
+; label-close-foreground = ${colors.secondary}
+; label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
+menu-0-0 = 
+menu-0-0-exec = sudo reboot
+menu-0-1 =  
+menu-0-1-exec = sudo poweroff
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+; ======================================================================
 
 [settings]
 screenchange-reload = true
@@ -396,6 +393,8 @@ screenchange-reload = true
 ;compositing-foreground = source
 ;compositing-border = over
 ;pseudo-transparency = false
+
+; ======================================================================
 
 [global/wm]
 margin-top = 5
