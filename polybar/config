@@ -33,9 +33,6 @@ color-5 = #607d8b
 white = #cccccc
 orange = #ff5733
 
-foreground = #ccc
-foreground-alt = #999
-
 ; ======================================================================
 
 [bar/main]
@@ -46,13 +43,7 @@ offset-y = 6
 fixed-center = true
 
 background = ${colors.color-2}
-; Workspace overlay color
-foreground = ${colors.foreground}
-
-; Underline height
-line-size = 2
-; Default underline color
-line-color = #fff
+foreground = ${colors.white}
 
 padding-left = 2
 padding-right = 2
@@ -101,9 +92,9 @@ label-alert-foreground = ${colors.orange}
 
 ; ======================================================================
 
-[module/wlan]
+[module/network]
 type = internal/network
-interface = 
+interface = l0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -114,32 +105,14 @@ format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+;label-disconnected-foreground = ${colors.white}
 
 ramp-signal-0 = "X"
 ramp-signal-1 = "X"
 ramp-signal-2 = "X"
 ramp-signal-3 = "X"
 ramp-signal-4 = "X"
-ramp-signal-foreground = ${colors.foreground-alt}
-
-; ======================================================================
-
-[module/eth]
-type = internal/network
-interface = wlp2s0
-interval = 3.0
-
-format-connected-underline = #55aa55
-format-connected-prefix = 
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = ${colors.white}
 
 ; ======================================================================
 
@@ -165,29 +138,11 @@ format-prefix = " "
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
-label-volume-foreground = ${root.foreground}
+format-volume =  <label-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${colors.white}
 
-label-muted = 
-label-muted-foreground = ${colors.white}
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+use-ui-max = false
 
 ; ======================================================================
 
@@ -200,22 +155,20 @@ full-at = 98
 format-charging = <animation-charging> <label-charging>
 format-discharging = <animation-discharging> <label-discharging>
 
-format-full-prefix = 
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.white}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
+animation-charging-0 = ""
+animation-charging-1 = ""
+animation-charging-2 = ""
 animation-charging-foreground = ${colors.white}
-animation-charging-framerate = 750
+animation-charging-framerate = 1000
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-3 = 
+animation-discharging-0 = ""
+animation-discharging-1 = ""
+animation-discharging-2 = ""
 animation-discharging-foreground = ${colors.white}
-animation-discharging-framerate = 750
+animation-discharging-framerate = 1000
 
 ; ======================================================================
 
@@ -226,6 +179,7 @@ warn-temperature = 60
 
 format-prefix = " "
 label = %temperature-c%
+
 label-warn = %temperature-c%
 label-warn-color = ${colors.orange}
 
@@ -239,9 +193,9 @@ expand-right = false
 label-open = 
 label-close = 
 
-; label-open-foreground = ${colors.color-2}
-; label-close-foreground = ${colors.color-2}
-; label-separator-foreground = ${colors.foreground-alt}
+; label-open-foreground = ${colors.white}
+; label-close-foreground = ${colors.white}
+; label-separator-foreground = ${colors.white}
 
 menu-0-0 = 
 menu-0-0-exec = sudo reboot
