@@ -2,7 +2,8 @@
 
 sxhkd &
 ~/.config/polybar/launch.sh
-polybar example &
+polybar main &
+feh --bg-scale ~/Desktop/walltest.png
 
 bspc monitor -d I II III IV V VI
 

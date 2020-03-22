@@ -17,8 +17,8 @@
 ;==========================================================
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 ; ======================================================================
 
@@ -33,19 +33,12 @@ color-5 = #607d8b
 white = #cccccc
 orange = #ff5733
 
-; Color of 1. text
-;          2. text-2
 foreground = #ccc
 foreground-alt = #999
 
-; Color designations 
-primary = #fff
-secondary = #fff
-alert = #fff
-
 ; ======================================================================
 
-[bar/example]
+[bar/main]
 width = 100%:-24
 height = 30
 offset-x = 12
@@ -63,11 +56,11 @@ line-color = #fff
 
 padding-left = 2
 padding-right = 2
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 3
+module-margin-right = 3
 
 font-0 = "Overpass:size=10;2"
-font-1 = "IcoFont:size=12;0"
+font-1 = "IcoFont:size=12;2"
 font-2 = "WunconSiji:pixelsize=14;0"
 
 modules-left = bspwm
@@ -208,16 +201,10 @@ adapter = AC0
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-
 format-discharging = <animation-discharging> <label-discharging>
 
 format-full-prefix = 
-format-full-prefix-foreground = ${colors.foreground-alt}
-
-;ramp-capacity-0 = "Y"
-;ramp-capacity-1 = "Y"
-;ramp-capacity-2 = "Y"
-;ramp-capacity-foreground = ${colors.foreground-alt}
+format-full-prefix-foreground = ${colors.white}
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -240,14 +227,10 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-;format = <ramp> <label>
-;format-underline = #f50a4d
-;format-warn = <ramp> <label-warn>
-;format-warn-underline = ${self.format-underline}
-
+format-prefix = " "
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn-color = ${colors.orange}
 
 ; ======================================================================
 
@@ -259,8 +242,8 @@ expand-right = false
 label-open = 
 label-close = 
 
-; label-open-foreground = ${colors.secondary}
-; label-close-foreground = ${colors.secondary}
+; label-open-foreground = ${colors.color-2}
+; label-close-foreground = ${colors.color-2}
 ; label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = 
