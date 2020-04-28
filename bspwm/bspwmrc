@@ -3,7 +3,8 @@
 sxhkd &
 ~/.config/polybar/launch.sh
 polybar main &
-feh --bg-scale ~/Desktop/walltest.png
+feh --bg-scale ~/.config/walls/walltest.png
+~scripts/spotify/launchlistener.sh
 
 bspc monitor -d 1 2 3 4 5
 
