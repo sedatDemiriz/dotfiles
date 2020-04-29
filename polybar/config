@@ -66,8 +66,8 @@ offset-x = 12
 offset-y = 6
 fixed-center = true
 
-background = ${colors.color-2}
-foreground = ${colors.white}
+background = ${colors.polarnight-3}
+foreground = ${colors.snowstorm-2}
 
 padding-left = 2
 padding-right = 2
@@ -100,19 +100,19 @@ type = internal/bspwm
 
 label-focused = ■
 label-focused-padding = 2
-label-focused-foreground = ${colors.white}
+label-focused-foreground = ${colors.snowstorm-2}
 
 label-occupied = □
 label-occupied-padding = 2
-label-occupied-foreground = ${colors.white}
+label-occupied-foreground = ${colors.snowstorm-2}
 
 label-empty = □
 label-empty-padding = 2
-label-empty-foreground = ${colors.white}
+label-empty-foreground = ${colors.snowstorm-2}
 
-label-alert = □
+label-alert = 
 label-alert-padding = 2
-label-alert-foreground = ${colors.orange}
+label-alert-foreground = ${colors.snowstorm-2}
 
 ; ======================================================================
 
@@ -129,14 +129,14 @@ format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.white}
+;label-disconnected-foreground = ${colors.snowstorm-2}
 
 ramp-signal-0 = "X"
 ramp-signal-1 = "X"
 ramp-signal-2 = "X"
 ramp-signal-3 = "X"
 ramp-signal-4 = "X"
-ramp-signal-foreground = ${colors.white}
+ramp-signal-foreground = ${colors.snowstorm-2}
 
 ; ======================================================================
 
@@ -164,7 +164,7 @@ type = internal/pulseaudio
 
 format-volume =  <label-volume>
 label-volume = %percentage%%
-label-volume-foreground = ${colors.white}
+label-volume-foreground = ${colors.snowstorm-2}
 
 use-ui-max = false
 
@@ -180,18 +180,18 @@ format-charging = <animation-charging> <label-charging>
 format-discharging = <animation-discharging> <label-discharging>
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.white}
+format-full-prefix-foreground = ${colors.snowstorm-2}
 
 animation-charging-0 = ""
 animation-charging-1 = ""
 animation-charging-2 = ""
-animation-charging-foreground = ${colors.white}
+animation-charging-foreground = ${colors.snowstorm-2}
 animation-charging-framerate = 1000
 
 animation-discharging-0 = ""
 animation-discharging-1 = ""
 animation-discharging-2 = ""
-animation-discharging-foreground = ${colors.white}
+animation-discharging-foreground = ${colors.snowstorm-2}
 animation-discharging-framerate = 1000
 
 ; ======================================================================
@@ -217,9 +217,9 @@ expand-right = false
 label-open = 
 label-close = 
 
-; label-open-foreground = ${colors.white}
-; label-close-foreground = ${colors.white}
-; label-separator-foreground = ${colors.white}
+; label-open-foreground = ${colors.snowstorm-2}
+; label-close-foreground = ${colors.snowstorm-2}
+; label-separator-foreground = ${colors.snowstorm-2}
 
 menu-0-0 = 
 menu-0-0-exec = sudo reboot
