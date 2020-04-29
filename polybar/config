@@ -33,6 +33,30 @@ color-5 = #607d8b
 white = #cccccc
 orange = #ff5733
 
+; Lightest to darkest gray
+polarnight-1 = #4c566a
+polarnight-2 = #434c5e
+polarnight-3 = #3b4252
+polarnight-4 = #2e3440
+
+; Dirty whites
+snowstorm-1 = #eceff4
+snowstorm-2 = #e5e9f0
+snowstorm-3 = #d8dee9
+
+; Green to dark-blue
+frost-1 = #8fbcbb
+frost-2 = #88c0d0
+frost-3 = #81a1c1
+frost-4 = #5e81ac
+
+; Red to purple
+aurora-1 = #bf616a
+aurora-2 = #d08770
+aurora-3 = #ebcb8b
+aurora-4 = #a3be8c
+aurora-5 = #b48ead
+
 ; ======================================================================
 
 [bar/main]
@@ -56,7 +80,7 @@ font-2 = "WunconSiji:pixelsize=14;0"
 
 modules-left = bspwm
 modules-center = time
-modules-right = pulseaudio battery temperature date
+modules-right = network pulseaudio battery temperature date
 
 tray-position = right
 tray-padding = 2
@@ -94,7 +118,7 @@ label-alert-foreground = ${colors.orange}
 
 [module/network]
 type = internal/network
-interface = l0
+interface = wlp2s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
