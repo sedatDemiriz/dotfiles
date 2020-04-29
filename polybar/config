@@ -209,25 +209,6 @@ label-warn-color = ${colors.orange}
 
 ; ======================================================================
 
-[module/powermenu]
-type = custom/menu
-
-expand-right = false
-
-label-open = 
-label-close = 
-
-; label-open-foreground = ${colors.snowstorm-2}
-; label-close-foreground = ${colors.snowstorm-2}
-; label-separator-foreground = ${colors.snowstorm-2}
-
-menu-0-0 = 
-menu-0-0-exec = sudo reboot
-menu-0-1 =  
-menu-0-1-exec = sudo poweroff
-
-; ======================================================================
-
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
