@@ -203,7 +203,7 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format-prefix = " "
+format-prefix = " "
 label = %temperature-c%
 
 label-warn = %temperature-c%

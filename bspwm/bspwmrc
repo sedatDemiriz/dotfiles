@@ -8,7 +8,7 @@ feh --bg-scale ~/.config/walls/walltest.png
 
 bspc monitor -d 1 2 3 4 5
 
-bspc config border_width       1
+bspc config border_width       2
 bspc config window_gap         4
 bspc config top_padding        36
 bspc config bottom_padding     0
@@ -17,7 +17,7 @@ bspc config right_padding      8
 
 # Border colors
 bspc config normal_border_color "#263238"
-bspc config focused_border_color "#1F8999"
+bspc config focused_border_color "#5e81ac"
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
