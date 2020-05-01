@@ -1,5 +1,6 @@
-
-# Wm independent hotkeys
+#################################
+#	 Wm independent hotkeys		#
+#################################
 
 # Terminal emulator
 super + Return
@@ -11,9 +12,11 @@ super + @space
 
 # Make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	killall -q sxhkd; sxhkd &
 
-# BSPWM hotkeys
+#################
+# BSPWM hotkeys	#
+#################
 
 # Quit BSPWM normally
 super + alt + Escape
@@ -35,7 +38,9 @@ super + y
 super + g
 	bspc node -s biggest
 
-# State/flags
+#################
+#  State/flags	#
+#################
 
 # Set the window state
 super + {t,shift + t,s,f}
@@ -45,7 +50,9 @@ super + {t,shift + t,s,f}
 super + ctrl + {x,y,z}
 	bspc node -g {locked,sticky,private}
 
-# Focus/swap
+#################
+#  Focus/swap	#
+#################
 
 # Focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -77,7 +84,9 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-# Preselect
+#################
+# 	Preselect	#
+#################
 
 # Preselect the direction
 super + ctrl + {h,j,k,l}
@@ -95,7 +104,9 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-# Move/resize
+#################
+#  Move/resize	#
+#################
 
 # Expand a window by moving one of its side outward
 super + alt + {h,j,k,l}

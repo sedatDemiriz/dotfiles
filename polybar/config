@@ -23,7 +23,6 @@ margin-bottom = 0
 ; ======================================================================
 
 [colors]
-
 ; Lightest to darkest gray
 polarnight-1 = #4c566a
 polarnight-2 = #434c5e
