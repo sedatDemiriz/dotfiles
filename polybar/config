@@ -24,15 +24,6 @@ margin-bottom = 0
 
 [colors]
 
-color-1 = #263238
-color-2 = #37474f
-color-3 = #455a64
-color-4 = #546e7a
-color-5 = #607d8b
-
-white = #cccccc
-orange = #ff5733
-
 ; Lightest to darkest gray
 polarnight-1 = #4c566a
 polarnight-2 = #434c5e

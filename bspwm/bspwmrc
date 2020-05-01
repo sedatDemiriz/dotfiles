@@ -3,6 +3,7 @@
 sxhkd &
 ~/.config/polybar/launch.sh
 polybar main &
+picom -b --config ~/.config/picom/picom.conf
 feh --bg-scale ~/.config/walls/walltest.png
 ~scripts/spotify/launchlistener.sh
 
