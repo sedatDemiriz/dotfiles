@@ -5,6 +5,26 @@
  ******************************************************************************/
 
 /* {
+    polarnight-1:                rgba (76, 86, 106, 100%);
+    polarnight-2:                rgba (67, 76, 94, 100%);
+    polarnight-3:                rgba (59, 66, 82, 100%);
+    polarnight-4:                rgba (46, 52, 64, 100%);
+
+    snowstorm-1:                 rgba (236, 239, 244, 100%);
+    snowstorm-2:                 rgba (229, 233, 240, 100%);
+    snowstorm-3:                 rgba (216, 222, 233, 100%);
+
+    frost-1:                     rgba (143, 188, 187, 100%);
+    frost-2:                     rgba (136, 192, 208, 100%);
+    frost-3:                     rgba (129, 161, 193, 100%);
+    frost-4:                     rgba (94, 129, 172, 100%);
+
+    aurora-1:                    rgba (191, 97, 106, 100%);
+    aurora-2:                    rgba (208, 135, 112, 100%);
+    aurora-3:                    rgba (235, 203, 139, 100%);
+    aurora-4:                    rgba (163, 190, 140, 100%);
+    aurora-5:                    rgba (180, 142, 173, 100%);
+
     selected-normal-foreground:  rgba (229, 233, 240, 100%);
     selected-urgent-foreground:  rgba (255, 195, 156, 100%);
     selected-active-foreground:  rgba (32, 81, 113, 100%);
@@ -33,13 +53,13 @@
     
     lightbg:                     rgba (238, 232, 213, 100%);
     lightfg:                     rgba (88, 104, 117, 100%);  
-    background-color:            rgba (0, 0, 0, 0%);
-
+    
+    background-color:            rgba (0, 0, 0, 100%);
+    separatorcolor:              rgba (38, 139, 210, 100%);  
     bordercolor:                 rgba (57, 57, 57, 100%);
     border-color:                @foreground;
    
     spacing:                     2;
-    separatorcolor:              rgba (38, 139, 210, 100%);       
 } */
 
 #window {
