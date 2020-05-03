@@ -4,7 +4,7 @@
  * Copyright: Rasmus Steinke
  ******************************************************************************/
 
-/* {
+* {
     polarnight-1:                rgba (76, 86, 106, 100%);
     polarnight-2:                rgba (67, 76, 94, 100%);
     polarnight-3:                rgba (59, 66, 82, 100%);
@@ -25,103 +25,119 @@
     aurora-4:                    rgba (163, 190, 140, 100%);
     aurora-5:                    rgba (180, 142, 173, 100%);
 
-    selected-normal-foreground:  rgba (229, 233, 240, 100%);
-    selected-urgent-foreground:  rgba (255, 195, 156, 100%);
-    selected-active-foreground:  rgba (32, 81, 113, 100%);
+    error-red:                   rgba (255, 0, 0, 100%);
 
-    selected-normal-background:  rgba (38, 139, 210, 100%);
-    selected-urgent-background:  rgba (38, 139, 210, 100%);
-    selected-active-background:  rgba (38, 139, 210, 100%);
+    selected-normal-background:  @frost-4;
+    selected-urgent-background:  @frost-4;
+    selected-active-background:  @frost-4;
 
-    alternate-normal-background: transparent;
-    alternate-urgent-background: transparent;
-    alternate-active-background: transparent; 
+    selected-normal-foreground:  @snowstorm-3;
+    selected-urgent-foreground:  @aurora-2;
+    selected-active-foreground:  @snowstorm-3;
 
-    alternate-normal-foreground: @foreground;   
-    alternate-active-foreground: @active-foreground;
-    alternate-urgent-foreground: @urgent-foreground;
+    alternate-normal-background: @frost-4;
+    alternate-urgent-background: @frost-4;
+    alternate-active-background: @frost-4; 
 
-    foreground:                  rgba (229, 233, 240, 100%);
-    urgent-foreground:           rgba (243, 132, 61, 100%);
-    active-foreground:           rgba (38, 139, 210, 100%);
-    normal-foreground:           @foreground;   
-        
-    background:                  transparent;
-    urgent-background:           transparent;
-    active-background:           rgba (57, 57, 57, 100%);
-    normal-background:           transparent;
+    alternate-normal-foreground: @snowstorm-3;
+    alternate-active-foreground: @aurora-2;
+    alternate-urgent-foreground: @snowstorm-3;
+
+    foreground:                  @snowstorm-3;
+    normal-foreground:           @snowstorm-3;
+    urgent-foreground:           @aurora-2;
+    active-foreground:           @snowstorm-3;
     
-    lightbg:                     rgba (238, 232, 213, 100%);
-    lightfg:                     rgba (88, 104, 117, 100%);  
-    
-    background-color:            rgba (0, 0, 0, 100%);
-    separatorcolor:              rgba (38, 139, 210, 100%);  
-    bordercolor:                 rgba (57, 57, 57, 100%);
-    border-color:                @foreground;
-   
-    spacing:                     2;
-} */
+    background:                  @polarnight-3;
+    normal-background:           @polarnight-3;
+    urgent-background:           @polarnight-3;
+    active-background:           @polarnight-3;
 
+    debug-color:                 @error-red;
+}
+
+/* Border around everything */
 #window {
-    background-color: rgba (59, 66, 82, 100%);
-    border:           2;
-    padding:          5;
+    border:           0px;
+    padding:          0px;
+    background-color: @frost-4;
 }
+
+/* Border around all text, inside #window */
 #mainbox {
-    border:  0;
-    padding: 0;
+    border:  0px;
+    padding: 0px;
+    background-color: @background;
 }
 
-#message {
-    border:       1px dash 0px 0px ;
-    border-color: rgba (94, 129, 172, 100%);
-    padding:      1px ;
-}
-
-/* Currently unknown 
-#textbox {
-    text-color: rgba(255, 255, 255, 100%);
-}*/
-
-/* List of things to run */
+/* Collective border of run options */
 #listview {
-    fixed-height: 0;
-    border:       0px 0px 0px 0px;
-    border-color: rgba(255, 0, 0, 100%);
-    spacing:      2px ;
+    spacing:      0px;
+    border:       0px;
+    padding:      0px;
+    border-color: @polarnight-3;
     scrollbar:    false;
-    padding:      0px 0px 0px 0px;
 }
 
+/***************************/
+/* Aesthetics of scrollbar */
+/***************************/
+#scrollbar {
+    width:        0px;
+    border:       0px;
+    padding:      0px;
+    background-color: @polarnight-3;
+    handle-width: -2px;
+}
+
+/*******************/
 /* Each list entry */
+/*******************/
 #element {
-    border:  0;
-    padding: 1px ;
+    border:  0px;
+    padding: 2px;
+    background-color: @frost-4;
 }
 
-/* Alternating list entries color */
+/**************************/
+/* Odd list entries color */
+/**************************/
 #element.normal.normal {
-    background-color: rgba(255, 255, 0, 100%);
-    text-color:       rgba(255, 0, 255, 100%);
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
 }
-
-/* Urgent list entry color */
 #element.normal.urgent {
-    background-color: rgba(255, 255, 0, 100%);
-    text-color:       rgba(255, 0, 255, 100%);
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
 }
 #element.normal.active {
     background-color: @active-background;
     text-color:       @active-foreground;
 }
 
+/***************************/
+/* Even list entries color */
+/***************************/
+#element.alternate.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+#element.alternate.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+#element.alternate.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+/*****************************/
 /* Selected list entry color */
+/*****************************/
 #element.selected.normal {
     background-color: @selected-normal-background;
     text-color:       @selected-normal-foreground;
 }
-
-/* Urgent selected list entry color */
 #element.selected.urgent {
     background-color: @selected-urgent-background;
     text-color:       @selected-urgent-foreground;
@@ -130,59 +146,62 @@
     background-color: @selected-active-background;
     text-color:       @selected-active-foreground;
 }
-#element.alternate.normal {
-    background-color: @alternate-normal-background;
-    text-color:       @alternate-normal-foreground;
-}
-#element.alternate.urgent {
-    background-color: @alternate-urgent-background;
-    text-color:       @alternate-urgent-foreground;
-}
-#element.alternate.active {
-    background-color: @alternate-active-background;
-    text-color:       @alternate-active-foreground;
-}
-#scrollbar {
-    width:        4px ;
-    border:       0;
-    handle-width: 8px ;
-    padding:      0;
-}
-#sidebar {
-    border:       2px dash 0px 0px ;
-    border-color: @separatorcolor;
-}
-#button.selected {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
-}
-#button {
-    background-color: @background;
-    text-color:       @foreground;
+
+/**************************/
+/* Heading bar properties */
+/**************************/
+#inputbar {
+    children:   [prompt, textbox-prompt-colon, entry, case-indicator];
 }
 #inputbar {
-    spacing:    0;
-    text-color: @normal-foreground;
-    padding:    1px ;
-}
-#case-indicator {
-    spacing:    0;
-    text-color: @normal-foreground;
-}
-#entry {
-    spacing:    0;
-    text-color: @normal-foreground;
+    spacing:    0px;
+    text-color: @foreground;
+    background-color: @background;
+    padding:    5px 0px 5px 0px;
 }
 #prompt {
     spacing:    0;
-    text-color: @normal-foreground;
+    text-color: @foreground;
+    background-color: @background;
 }
-#inputbar {
-    children:   [prompt,textbox-prompt-colon,entry,case-indicator];
+#case-indicator {
+    spacing:    0;
+    text-color: @foreground;
+    background-color: @background;
+}
+#entry {
+    spacing:    0;
+    text-color: @foreground;
+    background-color: @background;
 }
 #textbox-prompt-colon {
     expand:     false;
     str:        ":";
-    margin:     0px 0.3em 0em 0em ;
-    text-color: @normal-foreground;
+    margin:     0px 0px 1px 1px;
+    text-color: @foreground;
+    background-color: @background;
+}
+
+/***********/
+/* Unknown */
+/***********/
+#message {
+    border:       1px 0px 0px 0px;
+    padding:      0px;
+    border-color: @debug-color;
+}
+#textbox {
+    text-color: @debug-color;
+}
+#sidebar {
+    border:       0px;
+    border-color: @debug-color;
+}
+#button {
+    background-color: @debug-color;
+    text-color:       @debug-color;
+}
+#button.selected {
+    background-color: @debug-color;
+    text-color:       @debug-color;
 }
